@@ -9,7 +9,7 @@ const faqs = [
   {
     question: "Qu'est-ce que DreamPulse exactement ?",
     answer:
-      "DreamPulse est un oreiller-réveil prototype conçu dans le cadre d'un projet académique en bachelier d'ingénieur civil. Il intègre un moteur vibrant miniaturisé qui s'active progressivement avant l'heure de réveil souhaitée, permettant un éveil en douceur sans alarme sonore.",
+      "DreamPulse est un oreiller-réveil prototype conçu dans le cadre du Projet P2 académique en bachelier d'ingénieur civil. Il intègre un moteur vibrant miniaturisé qui s'active progressivement avant l'heure de réveil souhaitée, permettant un éveil en douceur sans alarme sonore.",
   },
   {
     question: "Est-ce que DreamPulse est disponible à l'achat ?",
