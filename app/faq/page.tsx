@@ -19,7 +19,7 @@ const faqs = [
   {
     question: "Comment fonctionne le réveil par vibration ?",
     answer:
-      "Un microcontrôleur (Arduino Nano) pilote un moteur excentrique placé à l'intérieur de l'oreiller. Quelques minutes avant l'heure programmée, le moteur démarre à très faible intensité. L'amplitude augmente selon une courbe progressive jusqu'à l'heure cible, imitant la montée douce de la conscience lors d'un réveil naturel.",
+      "Un microcontrôleur (Arduino Nano) pilote un moteur excentrique placé à l'intérieur de l'oreiller.",
   },
   {
     question: "Les vibrations sont-elles perceptibles par un partenaire de lit ?",
