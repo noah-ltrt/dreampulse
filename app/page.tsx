@@ -111,12 +111,12 @@ export default function Home() {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="hidden md:block"
+              className="w-full md:w-auto"
             >
               <SiteImage
                 src="/image/photogroupe.jpeg"
                 alt="Photo produit DreamPulse"
-                className="w-[340px] h-[460px]"
+                className="w-full h-[320px] md:w-[340px] md:h-[460px]"
                 label="Photo produit 3:4"
               />
             </motion.div>
