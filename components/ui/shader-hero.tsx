@@ -68,7 +68,7 @@ export function ShaderHero() {
             transition={{ duration: 1, delay: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
             className="w-full md:w-auto"
           >
-            <div className="relative w-full h-[320px] md:w-[340px] md:h-[460px] overflow-hidden border border-[#1A1A1A]/10 shadow-[6px_6px_0px_0px_rgba(201,169,97,0.25)]">
+            <div className="relative w-full h-[320px] md:w-[340px] md:h-[460px] overflow-hidden shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_0_32px_8px_rgba(201,169,97,0.15)]">
               <Image
                 src="/image/photogroupe.jpeg"
                 alt="Photo produit DreamPulse"

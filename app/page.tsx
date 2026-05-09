@@ -25,7 +25,7 @@ function SiteImage({
 }) {
   if (!src) {
     return (
-      <div className={`bg-[#E8E5DE] flex items-center justify-center border border-[#1A1A1A]/08 ${className}`}>
+      <div className={`bg-[#E8E5DE] flex items-center justify-center shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_0_28px_6px_rgba(201,169,97,0.08)] ${className}`}>
         <span className="text-[10px] tracking-[0.15em] text-[#1A1A1A]/25 uppercase">
           {label}
         </span>
@@ -33,7 +33,7 @@ function SiteImage({
     );
   }
   return (
-    <div className={`relative overflow-hidden border border-[#1A1A1A]/10 shadow-[6px_6px_0px_0px_rgba(201,169,97,0.2)] ${className}`}>
+    <div className={`relative overflow-hidden shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_0_28px_6px_rgba(201,169,97,0.12)] ${className}`}>
       <Image src={src} alt={alt} fill className="object-cover" />
     </div>
   );
@@ -218,7 +218,7 @@ export default function Home() {
               <ScrollReveal key={card.num} delay={i * 0.1}>
                 <Link
                   href={card.href}
-                  className="group block px-8 py-10 md:first:pl-0 md:last:pr-0 hover:bg-[#1A1A1A]/[0.02] transition-colors duration-300 cursor-pointer"
+                  className="group block px-12 py-10 md:first:pl-0 md:last:pr-0 hover:bg-[#1A1A1A]/[0.02] transition-colors duration-300 cursor-pointer"
                 >
                   <p className="text-[10px] tracking-[0.2em] text-[#C9A961] mb-4">
                     {card.num}
