@@ -194,7 +194,7 @@ export default function Home() {
             <div className="w-8 h-px bg-[#C9A961]" />
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-[#1A1A1A]/[0.08]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-[#1A1A1A]/[0.15]">
             {[
               {
                 num: "01",
