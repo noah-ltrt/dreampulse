@@ -22,6 +22,7 @@ function ImagePlaceholder({
 const teamMembers = [
   { name: "Milan Debroux", role: "Bac 1 Ingénieur Civil" },
   { name: "Harold Dehaes", role: "Bac 1 Ingénieur Civil" },
+  { name: "Célestine De Meester", role: "Bac 1 Ingénieur Civil" },
   { name: "Lea Fontenoy", role: "Bac 1 Ingénieur Civil" },
   { name: "Noah La Tartara", role: "Bac 1 Ingénieur Civil" },
   { name: "Diane Lazzarotto", role: "Bac 1 Ingénieur Civil" },
