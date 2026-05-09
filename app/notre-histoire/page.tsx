@@ -151,7 +151,7 @@ export default function NotreHistoire() {
             </h2>
           </ScrollReveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
             {teamMembers.map((member, i) => (
               <ScrollReveal key={member.name + i} delay={i * 0.1}>
                 <div>
