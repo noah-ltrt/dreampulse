@@ -1,11 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { VideoSection } from "@/components/video-section";
+import { ShaderHero } from "@/components/ui/shader-hero";
 
 // ─── Pour remplacer un placeholder par une vraie photo :
 // 1. Copie ton image dans  public/images/  (ex: hero-produit.jpg)
@@ -39,91 +39,12 @@ function SiteImage({
   );
 }
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.18, delayChildren: 0.3 },
-  },
-};
-
-const itemVariants = {
-  hidden: { y: 28, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const },
-  },
-};
 
 export default function Home() {
   return (
     <>
       {/* ─── HERO ─────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center pt-16">
-        <div className="max-w-7xl mx-auto px-8 md:px-16 w-full">
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-12 md:gap-20 items-center min-h-[calc(100vh-4rem)]">
-
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              className="flex flex-col justify-center py-24 md:py-0"
-            >
-              <motion.p
-                variants={itemVariants}
-                className="text-[10px] tracking-[0.25em] text-[#C9A961] mb-8 uppercase"
-              >
-                Projet académique · Bachelier Ingénieur Civil
-              </motion.p>
-
-              <motion.h1
-                variants={itemVariants}
-                className="text-[clamp(3rem,7vw,6.5rem)] leading-[1.04] tracking-[-0.02em] text-[#1A1A1A] mb-8"
-                style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
-              >
-                Le Réveil<br />
-                n&rsquo;a jamais été<br />
-                aussi doux.
-              </motion.h1>
-
-              <motion.p
-                variants={itemVariants}
-                className="text-[15px] leading-[1.8] text-[#1A1A1A]/55 max-w-[420px] font-light tracking-wide"
-              >
-                Un oreiller intelligent qui vous réveille par vibrations
-                progressives, sans bruit, sans lumière — dans le respect
-                de votre sommeil.
-              </motion.p>
-
-              <motion.div
-                variants={itemVariants}
-                className="mt-12 flex items-center gap-3 text-[#1A1A1A]/30"
-              >
-                <ChevronDown size={14} className="animate-bounce" />
-                <span className="text-[10px] tracking-[0.2em] uppercase">
-                  Défiler
-                </span>
-              </motion.div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="w-full md:w-auto"
-            >
-              <SiteImage
-                src="/image/photogroupe.jpeg"
-                alt="Photo produit DreamPulse"
-                className="w-full h-[320px] md:w-[340px] md:h-[460px]"
-                label="Photo produit 3:4"
-              />
-            </motion.div>
-
-          </div>
-        </div>
-      </section>
+      <ShaderHero />
 
       {/* ─── PHRASE MANIFESTE ────────────────────────────── */}
       <section className="py-[160px] px-8 md:px-16">
