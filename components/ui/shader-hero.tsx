@@ -1,94 +1,80 @@
 "use client";
 
-import { MeshGradient, PulsingBorder } from "@paper-design/shaders-react";
+import { MeshGradient } from "@paper-design/shaders-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
+import Image from "next/image";
 
 export function ShaderHero() {
   return (
-    <section className="relative w-full h-screen overflow-hidden">
-      {/* Animated mesh gradient background */}
+    <section className="relative w-full min-h-screen overflow-hidden">
+      {/* Mesh gradient background — warm ivory tones */}
       <MeshGradient
         style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
-        colors={["#0E1B2C", "#1a2d44", "#C9A961", "#F7F5F0"]}
-        speed={0.4}
-        distortion={0.6}
-        swirl={0.08}
-        grainOverlay={0.04}
+        colors={["#F7F5F0", "#E8E2D4", "#C9A961", "#0E1B2C"]}
+        speed={0.3}
+        distortion={0.5}
+        swirl={0.06}
+        grainOverlay={0.05}
       />
 
-      {/* Overlay for text legibility */}
-      <div className="absolute inset-0 bg-[#0E1B2C]/50" />
+      {/* Subtle overlay to unify tones */}
+      <div className="absolute inset-0 bg-[#F7F5F0]/30" />
+
+      {/* Gradient fade to ivory at the bottom — smooth transition to the rest of the page */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent to-[#F7F5F0]" />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-end h-full max-w-7xl mx-auto px-8 md:px-16 pb-16 md:pb-24">
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-12 items-end">
+      <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 w-full min-h-screen flex items-center">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-12 md:gap-20 items-center w-full py-32 md:py-0">
 
-          {/* Hero text — bottom left */}
+          {/* Hero text */}
           <motion.div
-            initial={{ opacity: 0, y: 32 }}
+            initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] as const }}
+            className="flex flex-col"
           >
-            <p className="text-[10px] tracking-[0.3em] text-[#C9A961] uppercase mb-6">
+            <p className="text-[10px] tracking-[0.25em] text-[#C9A961] mb-8 uppercase">
               Projet académique · Bachelier Ingénieur Civil
             </p>
+
             <h1
-              className="text-[clamp(3rem,7vw,6.5rem)] leading-[1.04] tracking-[-0.02em] text-white mb-8"
+              className="text-[clamp(3rem,7vw,6.5rem)] leading-[1.04] tracking-[-0.02em] text-[#1A1A1A] mb-8"
               style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
             >
               Le Réveil<br />
               n&rsquo;a jamais été<br />
               aussi doux.
             </h1>
-            <p className="text-[15px] leading-[1.8] text-white/60 max-w-[420px] font-light tracking-wide mb-10">
+
+            <p className="text-[15px] leading-[1.8] text-[#1A1A1A]/55 max-w-[420px] font-light tracking-wide">
               Un oreiller intelligent qui vous réveille par vibrations
-              progressives, sans bruit, sans lumière.
+              progressives, sans bruit, sans lumière — dans le respect
+              de votre sommeil.
             </p>
-            <Link
-              href="/le-produit"
-              className="inline-flex items-center gap-3 text-[11px] tracking-[0.2em] text-white/50 uppercase hover:text-[#C9A961] transition-colors duration-300 group cursor-pointer"
-            >
-              Découvrir le projet
-              <ArrowRight
-                size={13}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </Link>
+
+            <div className="mt-12 flex items-center gap-3 text-[#1A1A1A]/30">
+              <ChevronDown size={14} className="animate-bounce" />
+              <span className="text-[10px] tracking-[0.2em] uppercase">Défiler</span>
+            </div>
           </motion.div>
 
-          {/* Pulsing border logo — bottom right, desktop only */}
+          {/* Photo */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] as const }}
-            className="hidden md:flex items-center justify-center"
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
+            className="w-full md:w-auto"
           >
-            <div className="relative w-[180px] h-[180px]">
-              <PulsingBorder
-                style={{ width: "100%", height: "100%" }}
-                colorBack="#0E1B2C"
-                colors={["#C9A961", "#F7F5F0", "#C9A96199"]}
-                speed={0.7}
-                roundness={1}
-                thickness={0.08}
-                pulse={0.35}
-                intensity={0.4}
-                bloom={0.3}
-                spots={4}
+            <div className="relative w-full h-[320px] md:w-[340px] md:h-[460px] overflow-hidden border border-[#1A1A1A]/10 shadow-[6px_6px_0px_0px_rgba(201,169,97,0.25)]">
+              <Image
+                src="/image/photogroupe.jpeg"
+                alt="Photo produit DreamPulse"
+                fill
+                className="object-cover"
               />
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
-                <p
-                  className="text-3xl text-white/90 mb-1"
-                  style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
-                >
-                  DP
-                </p>
-                <p className="text-[8px] tracking-[0.35em] text-[#C9A961] uppercase">
-                  DreamPulse
-                </p>
-              </div>
             </div>
           </motion.div>
 

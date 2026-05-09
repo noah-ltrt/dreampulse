@@ -25,7 +25,7 @@ function SiteImage({
 }) {
   if (!src) {
     return (
-      <div className={`bg-[#E8E5DE] flex items-center justify-center ${className}`}>
+      <div className={`bg-[#E8E5DE] flex items-center justify-center border border-[#1A1A1A]/08 ${className}`}>
         <span className="text-[10px] tracking-[0.15em] text-[#1A1A1A]/25 uppercase">
           {label}
         </span>
@@ -33,7 +33,7 @@ function SiteImage({
     );
   }
   return (
-    <div className={`relative overflow-hidden ${className}`}>
+    <div className={`relative overflow-hidden border border-[#1A1A1A]/10 shadow-[6px_6px_0px_0px_rgba(201,169,97,0.2)] ${className}`}>
       <Image src={src} alt={alt} fill className="object-cover" />
     </div>
   );

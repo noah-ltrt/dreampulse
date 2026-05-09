@@ -11,7 +11,7 @@ function ImagePlaceholder({
   label?: string;
 }) {
   return (
-    <div className={`bg-[#E8E5DE] flex items-center justify-center ${className}`}>
+    <div className={`bg-[#E8E5DE] flex items-center justify-center border border-[#1A1A1A]/10 shadow-[4px_4px_0px_0px_rgba(201,169,97,0.2)] ${className}`}>
       <span className="text-[12px] tracking-[0.15em] text-[#1A1A1A]/25 uppercase">
         {label}
       </span>
