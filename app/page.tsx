@@ -6,6 +6,7 @@ import Image from "next/image";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { VideoSection } from "@/components/video-section";
 import { ShaderHero } from "@/components/ui/shader-hero";
+import { AnimatedStats } from "@/components/ui/animated-counter";
 
 // ─── Pour remplacer un placeholder par une vraie photo :
 // 1. Copie ton image dans  public/images/  (ex: hero-produit.jpg)
@@ -53,7 +54,7 @@ export default function Home() {
             className="text-[clamp(1.9rem,4.5vw,4rem)] leading-[1.2] tracking-[-0.01em] text-[#1A1A1A]"
             style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
           >
-            &ldquo;Chaque matin commence<br />la nuit précédente.&rdquo;
+            &ldquo;Sentir le matin<br />avant de l'entendre.&rdquo;
           </p>
           <div className="mt-8 flex justify-center">
             <div className="w-10 h-px bg-[#C9A961]" />
@@ -68,7 +69,7 @@ export default function Home() {
 
             <ScrollReveal className="relative z-10 md:-mr-8">
               <SiteImage
-                src={null}
+                src="/image/NLT_5660.jpg"
                 alt="Vue 3/4 du produit DreamPulse"
                 className="w-full aspect-[4/5]"
                 label="Vue 3/4 produit"
@@ -89,14 +90,15 @@ export default function Home() {
                 Technologie<br />au service du sommeil
               </h2>
               <p className="text-sm leading-[1.9] text-[#1A1A1A]/60 mb-4 max-w-[380px]">
-                DreamPulse intègre un système de vibration miniaturisé
-                directement dans l&rsquo;oreiller. L&rsquo;intensité augmente
-                progressivement, respectant les cycles naturels du sommeil.
+                DreamPulse repose sur un circuit électronique logé dans un
+                boîtier plastique au cœur de l&rsquo;oreiller. Une bobine génère
+                un champ magnétique qui actionne un aimant fixé à une membrane
+                en carton — c&rsquo;est cette membrane qui vibre.
               </p>
               <p className="text-sm leading-[1.9] text-[#1A1A1A]/60 max-w-[380px]">
-                Conçu dans le cadre d&rsquo;un bachelier en ingénierie civile,
-                chaque composant a été choisi pour sa fiabilité et son confort
-                au contact.
+                La fréquence monte progressivement de 5 à 15 Hz via un
+                oscillateur à tension contrôlée, piloté par Arduino et
+                télécommande infrarouge. Alimenté par piles, sans fil.
               </p>
 
               <Link
@@ -122,17 +124,17 @@ export default function Home() {
               {
                 num: "I",
                 title: "Réveil progressif",
-                text: "Des vibrations qui s'intensifient graduellement, pour un réveil naturel qui imite le lever du soleil — sans lumière ni son.",
+                text: "Les vibrations démarrent à 5 Hz et montent graduellement jusqu'à 15 Hz, guidant le corps hors du sommeil sans sursaut ni alarme sonore.",
               },
               {
                 num: "II",
                 title: "Conception ingénieure",
-                text: "Électronique embarquée, prototypage manuel et tests rigoureux réalisés en laboratoire académique, de A à Z.",
+                text: "Oscillateur VCO, convertisseur Push-Pull à transistors BC327, interaction bobine-aimant — chaque bloc conçu, calculé et mesuré en laboratoire.",
               },
               {
                 num: "III",
-                title: "Sommeil respecté",
-                text: "Aucune lumière, aucun son. L'oreiller reste un espace de paix, même au moment du réveil.",
+                title: "Discret et autonome",
+                text: "Alimenté par piles, contrôlé à distance par télécommande infrarouge. Aucun bruit, aucune lumière — idéal aussi pour les personnes malentendantes.",
               },
             ].map((pilier, i) => (
               <ScrollReveal key={pilier.num} delay={i * 0.12}>
@@ -157,15 +159,21 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── STATS ANIMÉES ───────────────────────────────── */}
+      <AnimatedStats />
+
       {/* ─── IMAGE IMMERSIVE ─────────────────────────────── */}
       <section className="py-8 px-8 md:px-16">
         <ScrollReveal>
-          <SiteImage
-            src={null}
-            alt="Ambiance — chambre, lumière douce du matin"
-            className="w-full h-[70vh]"
-            label="Ambiance — chambre, lumière douce du matin"
-          />
+          <div className="relative w-full max-w-3xl mx-auto shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_0_28px_6px_rgba(201,169,97,0.12)]">
+            <Image
+              src="/image/photodreampulse.jpg"
+              alt="DreamPulse — le produit"
+              width={1200}
+              height={800}
+              className="w-full h-auto object-contain"
+            />
+          </div>
         </ScrollReveal>
       </section>
 

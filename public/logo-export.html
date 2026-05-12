@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* Version fond transparent (pour PNG avec transparence) */
+    body {
+      background: transparent;
+      display: inline-block;
+      padding: 16px 24px;
+    }
+
+    .logo {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: #1A1A1A;
+      white-space: nowrap;
+    }
+
+    /* Version fond ivoire (plus facile à découper) */
+    .version-ivoire {
+      background: #F7F5F0;
+      display: inline-block;
+      padding: 20px 32px;
+      margin-top: 24px;
+    }
+
+    /* Version fond sombre */
+    .version-sombre {
+      background: #0E1B2C;
+      display: inline-block;
+      padding: 20px 32px;
+      margin-top: 24px;
+    }
+    .version-sombre .logo {
+      color: #F7F5F0;
+    }
+
+    /* Version or */
+    .version-or .logo {
+      color: #C9A961;
+    }
+
+    label {
+      display: block;
+      font-family: monospace;
+      font-size: 11px;
+      color: #999;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+  <label>Fond transparent / blanc</label>
+  <div class="logo">DreamPulse</div>
+
+  <br><br>
+  <label>Fond ivoire #F7F5F0</label>
+  <div class="version-ivoire">
+    <div class="logo">DreamPulse</div>
+  </div>
+
+  <br><br>
+  <label>Fond sombre #0E1B2C</label>
+  <div class="version-sombre">
+    <div class="logo">DreamPulse</div>
+  </div>
+
+  <br><br>
+  <label>Texte doré #C9A961 (sur fond clair)</label>
+  <div class="version-or">
+    <div class="logo">DreamPulse</div>
+  </div>
+</body>
+</html>

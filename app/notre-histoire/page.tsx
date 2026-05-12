@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ScrollReveal } from "@/components/scroll-reveal";
+import { TeamHoverCard } from "@/components/ui/team-hover-card";
 
 function ImagePlaceholder({
   className = "",
@@ -20,12 +22,12 @@ function ImagePlaceholder({
 }
 
 const teamMembers = [
-  { name: "Milan Debroux", role: "Bac 1 Ingénieur Civil" },
-  { name: "Harold Dehaes", role: "Bac 1 Ingénieur Civil" },
-  { name: "Célestine De Meester", role: "Bac 1 Ingénieur Civil" },
-  { name: "Lea Fontenoy", role: "Bac 1 Ingénieur Civil" },
-  { name: "Noah La Tartara", role: "Bac 1 Ingénieur Civil" },
-  { name: "Diane Lazzarotto", role: "Bac 1 Ingénieur Civil" },
+  { name: "Milan Debroux", role: "Bac 1 Ingénieur Civil", photo: "/image/NLT_5685.jpg" },
+  { name: "Harold Dehaes", role: "Bac 1 Ingénieur Civil", photo: "/image/NLT_5692.jpg" },
+  { name: "Célestine De Meester", role: "Bac 1 Ingénieur Civil", photo: "/image/NLT_5694.jpg" },
+  { name: "Lea Fontenoy", role: "Bac 1 Ingénieur Civil", photo: "/image/NLT_5680.jpg" },
+  { name: "Noah La Tartara", role: "Bac 1 Ingénieur Civil", photo: "/image/NLT_5695.jpg" },
+  { name: "Diane Lazzarotto", role: "Bac 1 Ingénieur Civil", photo: "/image/NLT_5687.jpg" },
 ];
 
 const timeline = [
@@ -96,8 +98,8 @@ export default function NotreHistoire() {
           </ScrollReveal>
 
           {[
-            "Tout a commencé par une question banale : pourquoi le réveil est-il si brutal ? Chaque matin, un signal sonore arrache des millions de personnes à leur sommeil — souvent au moment le moins opportun de leur cycle. Nous voulions changer cela.",
-            "Dans le cadre de notre cours de projet en bachelier d'ingénieur civil, nous avons eu carte blanche pour concevoir un objet qui réponde à un problème réel. Quatre étudiants, un semestre, et une idée simple : transformer l'oreiller en réveil.",
+            "Tout a commencé par deux frustrations concrètes : le partenaire qui part travailler tôt et met son alarme à fond, rendant le rendormissement impossible — et les personnes malentendantes, que le réveil sonore ne suffit pas à réveiller. Nous voulions changer cela.",
+            "Dans le cadre du cours LEPL1102 en bachelier d'ingénieur civil à l'École Polytechnique de Louvain, nous avons eu carte blanche pour concevoir un objet qui réponde à un problème réel. Six étudiants, un quadrimestre, et une idée simple : transformer l'oreiller en réveil.",
             "Le défi technique était réel. Intégrer de l'électronique dans un objet de literie, garantir le confort, maîtriser la courbe de vibration, assurer la fiabilité — chaque contrainte a nourri notre apprentissage. Chaque prototype raté nous a appris quelque chose.",
             "DreamPulse n'est pas un produit commercial. C'est la trace d'un processus, la preuve que l'ingénierie peut naître d'une attention portée au quotidien. Un oreiller qui pense à vous, avant même que vous ne vous réveilliez.",
           ].map((para, i) => (
@@ -113,10 +115,7 @@ export default function NotreHistoire() {
                   >
                     T
                   </span>
-                  out a commencé par une question banale : pourquoi le réveil
-                  est-il si brutal ? Chaque matin, un signal sonore arrache des
-                  millions de personnes à leur sommeil — souvent au moment le
-                  moins opportun de leur cycle. Nous voulions changer cela.
+                  out a commencé par deux frustrations concrètes : le partenaire qui part travailler tôt et met son alarme à fond, rendant le rendormissement impossible — et les personnes malentendantes, que le réveil sonore ne suffit pas à réveiller. Nous voulions changer cela.
                 </p>
               )}
               {i !== 0 && (
@@ -136,12 +135,31 @@ export default function NotreHistoire() {
         </div>
       </section>
 
+      {/* ─── PHOTO DE GROUPE ──────────────────────────────── */}
+      {/* ↓ Remplace null par "/image/TON_FICHIER.jpg" pour afficher la vraie photo */}
+      {(() => {
+        const src: "/image/NLT_5732.jpg" | null = "/image/NLT_5702.jpg";
+        return (
+          <section className="px-8 md:px-16 py-12 border-t border-[#1A1A1A]/[0.07]">
+            <ScrollReveal>
+              {src ? (
+                <div className="relative w-full max-w-3xl mx-auto shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_0_28px_6px_rgba(201,169,97,0.12)]">
+                  <Image src="/image/NLT_5702.jpg" alt="Photo de groupe DreamPulse — Groupe 53" width={1200} height={800} className="w-full h-auto object-contain"/>
+                </div>
+              ) : (
+                <ImagePlaceholder className="w-full h-[55vh] md:h-[70vh]" label="Photo de groupe — Groupe 53" />
+              )}
+            </ScrollReveal>
+          </section>
+        );
+      })()}
+
       {/* ─── ÉQUIPE ───────────────────────────────────────── */}
       <section className="px-8 md:px-16 py-24 border-t border-[#1A1A1A]/[0.07]">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal className="mb-16">
             <p className="text-[10px] tracking-[0.25em] text-[#C9A961] uppercase mb-2">
-              L'équipe
+              Le Groupe 53
             </p>
             <h2
               className="text-3xl md:text-4xl tracking-tight text-[#1A1A1A]"
@@ -154,21 +172,7 @@ export default function NotreHistoire() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
             {teamMembers.map((member, i) => (
               <ScrollReveal key={member.name + i} delay={i * 0.1}>
-                <div>
-                  <ImagePlaceholder
-                    className="w-full aspect-square mb-5 grayscale"
-                    label="Portrait"
-                  />
-                  <p
-                    className="text-[20px] text-[#1A1A1A] tracking-tight mb-1"
-                    style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
-                  >
-                    {member.name}
-                  </p>
-                  <p className="text-[11px] tracking-[0.12em] text-[#1A1A1A]/40 uppercase">
-                    {member.role}
-                  </p>
-                </div>
+                <TeamHoverCard member={member} />
               </ScrollReveal>
             ))}
           </div>

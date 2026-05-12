@@ -37,7 +37,7 @@ export function ShaderHero() {
             className="flex flex-col"
           >
             <p className="text-[10px] tracking-[0.25em] text-[#C9A961] mb-8 uppercase">
-              Projet académique · Bachelier Ingénieur Civil
+              Projet académique | Groupe 53 · Bachelier Ingénieur Civil
             </p>
 
             <h1
@@ -68,9 +68,9 @@ export function ShaderHero() {
             transition={{ duration: 1, delay: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
             className="w-full md:w-auto"
           >
-            <div className="relative w-full h-[320px] md:w-[340px] md:h-[460px] overflow-hidden shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_0_32px_8px_rgba(201,169,97,0.15)]">
+            <div className="relative w-full h-[400px] md:w-[420px] md:h-[540px] overflow-hidden shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_0_32px_8px_rgba(201,169,97,0.15)]">
               <Image
-                src="/image/photogroupe.jpeg"
+                src="/image/NLT_5732.jpg"
                 alt="Photo produit DreamPulse"
                 fill
                 className="object-cover"

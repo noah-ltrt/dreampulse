@@ -9,42 +9,42 @@ const faqs = [
   {
     question: "Qu'est-ce que DreamPulse exactement ?",
     answer:
-      "DreamPulse est un oreiller-réveil prototype conçu dans le cadre du Projet P2 académique en bachelier d'ingénieur civil. Il intègre un moteur vibrant miniaturisé qui s'active progressivement avant l'heure de réveil souhaitée, permettant un éveil en douceur sans alarme sonore.",
+      "DreamPulse est un oreiller vibrant prototype conçu dans le cadre du cours LEPL1102 (Projet 2) en bachelier d'ingénieur civil à l'École Polytechnique de Louvain. Il repose sur un circuit électronique qui génère des vibrations progressives via une interaction bobine-aimant-membrane, pour remplacer le réveil sonore traditionnel.",
   },
   {
     question: "Est-ce que DreamPulse est disponible à l'achat ?",
     answer:
-      "Non. DreamPulse est un projet académique non commercial. Il ne sera pas mis en vente. Ce site vitrine a pour seul objectif de présenter la démarche, le produit et l'équipe dans le cadre du cours de projet.",
+      "Non. DreamPulse est un projet académique non commercial (Groupe 53, année 2025–2026). Ce site vitrine a pour seul objectif de présenter la démarche, le produit et l'équipe dans le cadre du cours de projet.",
   },
   {
     question: "Comment fonctionne le réveil par vibration ?",
     answer:
-      "Un microcontrôleur (Arduino Nano) pilote un moteur excentrique placé à l'intérieur de l'oreiller.",
+      "Un oscillateur à tension contrôlée (VCO) génère un signal carré dont la fréquence varie de 5 à ~15 Hz. Ce signal est amplifié par un convertisseur Push-Pull (transistors BC327) et envoyé dans une bobine (200 spires). Le champ magnétique produit attire et repousse alternativement un aimant fixé à une membrane en carton, dont les vibrations se propagent à travers l'oreiller.",
   },
   {
-    question: "Les vibrations sont-elles perceptibles par un partenaire de lit ?",
+    question: "Comment contrôle-t-on la fréquence de vibration ?",
     answer:
-      "Les tests ont montré que les vibrations restent largement localisées à l'oreiller et au plan de couchage immédiat. Pour une personne dormant à plus de 30 cm, les vibrations sont imperceptibles à faible intensité. À intensité maximale, un léger transfert peut être ressenti sur le matelas.",
+      "Un Arduino utilise la technique PWM (modulation de largeur d'impulsion) pour faire varier la tension de commande Vctrl de l'oscillateur. Un récepteur infrarouge permet de modifier cette tension à distance via une télécommande — chaque bouton correspond à une fréquence différente, permettant une montée progressive sans toucher l'oreiller.",
   },
   {
-    question: "L'oreiller peut-il être utilisé sans l'électronique ?",
+    question: "Pourquoi avoir choisi une membrane en carton ?",
     answer:
-      "Oui. La housse est conçue pour accueillir ou non le module électronique, qui est extractible. Sans le module, l'oreiller fonctionne comme un oreiller standard en coton, lavable à 40°C.",
+      "Le carton offre un bon compromis entre souplesse (nécessaire au confort) et rigidité (nécessaire à la tenue mécanique du système). L'aimant est collé contre cette membrane, dont la surface est légèrement inférieure à celle de l'oreiller, afin que les vibrations se propagent uniformément.",
   },
   {
-    question: "Quelle est l'autonomie de la batterie ?",
+    question: "Quelle est la source d'alimentation ?",
     answer:
-      "La batterie lithium intégrée offre environ 8 heures d'autonomie en veille active (moteur inactif, horloge allumée). En fonctionnement avec vibrations, la durée dépend de l'intensité et de la durée du cycle de réveil — généralement 20 à 30 minutes — ce qui n'affecte pas significativement l'autonomie globale.",
-  },
-  {
-    question: "Comment programmer l'heure de réveil ?",
-    answer:
-      "Via trois boutons physiques disposés sur le module électronique : un bouton de mode, un bouton d'incrémentation et un bouton de validation. Une LED indicatrice confirme chaque réglage. L'interface a été conçue pour rester intuitive même dans l'obscurité.",
+      "Le circuit est alimenté par 4 piles fournissant 6 V en continu. Ce choix favorise la portabilité et l'autonomie du système, sans câble d'alimentation. Le circuit a été conçu et testé pour rester fonctionnel même lorsque la tension des piles chute légèrement avec le temps.",
   },
   {
     question: "Y a-t-il des risques liés à l'électronique dans l'oreiller ?",
     answer:
-      "Le module électronique est entièrement encapsulé dans une pochette résistante à l'humidité légère. Il ne doit pas être mouillé directement. En usage normal — aucun liquide en contact direct — le risque est nul. Le circuit fonctionne en 5V DC via USB-C, une tension sans danger.",
+      "Le circuit électronique est entièrement logé dans un boîtier plastique isolant placé à l'intérieur de l'oreiller. Ce boîtier garantit l'isolation thermique vis-à-vis des matériaux inflammables (comme les plumes). Le circuit fonctionne en 6 V DC via piles — une tension sans danger pour l'utilisateur.",
+  },
+  {
+    question: "Pour qui DreamPulse est-il conçu ?",
+    answer:
+      "DreamPulse répond à deux besoins concrets : éviter de réveiller son partenaire avec une alarme sonore lorsqu'on part tôt, et offrir une alternative de réveil efficace aux personnes malentendantes, pour qui les alarmes traditionnelles sont insuffisantes.",
   },
 ];
 

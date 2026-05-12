@@ -82,7 +82,7 @@ export function Footer() {
 
         <div className="border-t border-[#F7F5F0]/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-[10px] tracking-[0.15em] text-[#F7F5F0]/30 uppercase">
-            Projet académique — Bachelier Ingénieur Civil — 2025–2026
+            Projet académique | Groupe 53 — Bachelier Ingénieur Civil — 2025–2026
           </p>
           <div className="w-6 h-px bg-[#C9A961]/40" />
         </div>

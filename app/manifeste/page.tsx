@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ScrollReveal } from "@/components/scroll-reveal";
 
 export default function Manifeste() {
@@ -59,6 +60,13 @@ export default function Manifeste() {
             </p>
           </ScrollReveal>
 
+          {/* Photo 1 — NLT_5735 */}
+          <ScrollReveal delay={0.06} className="my-10 flex justify-center">
+            <div className="w-80 shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_0_24px_4px_rgba(201,169,97,0.10)]">
+              <Image src="/image/NLT_5735.jpg" alt="DreamPulse" width={600} height={800} className="w-full h-auto object-contain" />
+            </div>
+          </ScrollReveal>
+
           {/* Citation centrale */}
           <ScrollReveal delay={0.05} className="py-12 my-4">
             <blockquote className="text-center">
@@ -110,6 +118,13 @@ export default function Manifeste() {
             </blockquote>
           </ScrollReveal>
 
+          {/* Photo 2 — NLT_5742 */}
+          <ScrollReveal delay={0.06} className="my-10">
+            <div className="w-36 mx-auto shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_0_24px_4px_rgba(201,169,97,0.10)]">
+              <Image src="/image/NLT_5742.jpg" alt="DreamPulse — atelier" width={800} height={600} className="w-full h-auto object-contain" />
+            </div>
+          </ScrollReveal>
+
           <ScrollReveal delay={0.08}>
             <p className="text-sm leading-[2.1] text-[#1A1A1A]/70 mb-10 mt-4">
               Ce projet est académique. Ses ambitions sont modestes dans
@@ -130,12 +145,19 @@ export default function Manifeste() {
             </p>
           </ScrollReveal>
 
+          {/* Photo 3 — NLT_5644 */}
+          <ScrollReveal delay={0.06} className="my-10">
+            <div className="w-full max-w-xs mx-auto shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_0_24px_4px_rgba(201,169,97,0.10)]">
+              <Image src="/image/NLT_5644.jpg" alt="DreamPulse — détail" width={800} height={600} className="w-full h-auto object-contain" />
+            </div>
+          </ScrollReveal>
+
           <ScrollReveal delay={0.05}>
             <div className="flex justify-center pt-4 pb-16">
               <p
                 className="text-[10px] tracking-[0.25em] text-[#C9A961] uppercase"
               >
-                — L'équipe DreamPulse, 2025–2026
+                — Le Groupe 53, 2025–2026
               </p>
             </div>
           </ScrollReveal>

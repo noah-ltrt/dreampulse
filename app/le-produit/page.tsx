@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ScrollReveal } from "@/components/scroll-reveal";
 
 function ImagePlaceholder({
@@ -22,62 +23,69 @@ function ImagePlaceholder({
 const steps = [
   {
     num: "01",
-    title: "Programmer l'heure",
-    text: "Via une interface simple, l'utilisateur définit l'heure souhaitée et la durée de la montée en intensité.",
+    title: "Activation à distance",
+    text: "Une télécommande infrarouge permet de régler la tension de contrôle et donc la fréquence de vibration, sans toucher à l'oreiller.",
   },
   {
     num: "02",
-    title: "Démarrage silencieux",
-    text: "Quelques minutes avant l'heure cible, l'oreiller commence à vibrer à très faible intensité, imperceptiblement.",
+    title: "Démarrage à 5 Hz",
+    text: "Le circuit démarre à basse fréquence (≈ 5 Hz), à peine perceptible. La membrane en carton transmet une légère vibration à travers l'oreiller.",
   },
   {
     num: "03",
     title: "Montée progressive",
-    text: "L'intensité augmente selon une courbe douce et régulière, guidant le corps hors du sommeil en douceur.",
+    text: "L'oscillateur VCO augmente graduellement la fréquence jusqu'à environ 15 Hz, intensifiant la vibration de façon continue et douce.",
   },
   {
     num: "04",
     title: "Réveil naturel",
-    text: "L'utilisateur s'éveille reposé, sans sursaut, sans alarme sonore — juste la conscience douce d'un nouveau matin.",
+    text: "Le corps sort du sommeil sans sursaut ni alarme sonore — une alternative pensée aussi pour les personnes malentendantes.",
   },
 ];
 
 const techBlocks = [
   {
-    label: "Électronique embarquée",
-    heading: "Circuits et microcontrôleur",
-    p1: "Le cœur du système repose sur un microcontrôleur programmé en C++, pilotant un moteur vibrant à courant continu via un pont en H. La consommation énergétique a été optimisée pour garantir une autonomie suffisante.",
-    p2: "Le circuit intègre également un module RTC (Real-Time Clock) pour maintenir l'heure avec précision, même hors alimentation.",
-    imgLabel: "Schéma électronique",
+    label: "Oscillateur VCO",
+    heading: "Générer le signal de vibration",
+    p1: "L'oscillateur à tension contrôlée (VCO) est le cœur du système. Il combine deux sous-blocs : un intégrateur (AOP + condensateur 1 μF) qui produit un signal triangulaire, et une bascule (AOP + potentiomètre) qui le transforme en signal carré.",
+    p2: "La fréquence de sortie dépend directement de la tension de commande Vctrl, elle-même modulée par l'Arduino via PWM. Résistances dimensionnées : Rctrl = 15 kΩ, RD = 10 kΩ.",
+    imgLabel: "Schéma oscillateur",
+    img: "/image/NLT_5723.jpg" as string | null,
+    contain: true,
     reverse: false,
   },
   {
-    label: "Prototypage",
-    heading: "Du schéma au prototype",
-    p1: "Chaque itération du prototype a été assemblée à la main, de la découpe du tissu à la soudure des composants. Trois versions ont été construites et testées avant d'atteindre la version finale.",
-    p2: "Les tests de confort ont impliqué des dormeurs réels, permettant d'ajuster la position du moteur et la densité du matelas de mousse.",
-    imgLabel: "Prototype en cours",
+    label: "Convertisseur Push-Pull",
+    heading: "Amplifier pour actionner la bobine",
+    p1: "Le signal issu de l'oscillateur ne fournit pas assez de courant pour actionner la bobine. Le bloc convertisseur Push-Pull, composé d'une paire de transistors bipolaires complémentaires (NPN + PNP, BC327), amplifie ce courant.",
+    p2: "Les transistors basculent alternativement entre état saturé et bloqué, inversant le sens du courant dans la bobine à chaque demi-période. Gain mesuré : β ≈ 458 (NPN) et β ≈ 573 (PNP), dans la plage datasheet.",
+    imgLabel: "Schéma convertisseur Push-Pull",
+    img: "/image/NLT_5713.jpg" as string | null,
     reverse: true,
   },
   {
-    label: "Design industriel",
-    heading: "Forme et matière",
-    p1: "L'enveloppe de l'oreiller a été conçue pour dissimuler entièrement l'électronique tout en restant lavable. La housse extérieure utilise un tissu respirant 100 % coton.",
-    p2: "Les contraintes ergonomiques — poids, épaisseur, souplesse — ont guidé chaque choix de matériaux, en dialogue constant avec les exigences techniques.",
-    imgLabel: "Rendu design industriel",
+    label: "Bobine · Aimant · Membrane",
+    heading: "Conversion électromécanique",
+    p1: "La bobine (200 spires, rayon 1,7 cm) génère un champ magnétique variable qui attire et repousse alternativement l'aimant permanent collé à une membrane en carton — un bon compromis entre souplesse et rigidité.",
+    p2: "Le tout est logé dans un boîtier plastique isolant, protégeant l'électronique des matériaux inflammables de l'oreiller. Alimenté par 4 piles (6 V), sans câble, sans WiFi.",
+    imgLabel: "Coupe de l'oreiller",
+    img: "/image/NLT_5703.jpg" as string | null,
+    contain: true,
     reverse: false,
   },
 ];
 
 const specs = [
-  ["Alimentation", "5 V DC via USB-C"],
-  ["Autonomie (batterie)", "8 heures en veille active"],
-  ["Moteur vibrant", "Moteur excentrique 3 V / 12 000 tr/min"],
-  ["Contrôleur", "ATmega328P (Arduino Nano)"],
-  ["Interface", "3 boutons + LED indicatrice"],
-  ["Housse", "Coton 200 fils, lavable à 40°C"],
-  ["Dimensions", "60 × 40 × 12 cm"],
-  ["Poids total", "680 g (housse + électronique)"],
+  ["Alimentation", "4 piles (6 V continu)"],
+  ["Fréquence de réveil", "5 Hz → ~15 Hz (progressive)"],
+  ["Oscillateur", "VCO — intégrateur + bascule à AOP"],
+  ["Condensateur", "1 μF"],
+  ["Résistances clés", "Rctrl = 15 kΩ · RD = 10 kΩ"],
+  ["Convertisseur", "Push-Pull — transistors BC327 (NPN + PNP)"],
+  ["Bobine", "200 spires · rayon 1,7 cm"],
+  ["Membrane", "Carton flexible (surface ≈ oreiller)"],
+  ["Contrôle", "Arduino + télécommande infrarouge (PWM)"],
+  ["Boîtier", "Plastique isolant — protection thermique intégrée"],
 ];
 
 export default function LeProduit() {
@@ -178,10 +186,19 @@ export default function LeProduit() {
                         : "md:-mr-8"
                     } relative z-10`}
                   >
-                    <ImagePlaceholder
-                      className="w-full aspect-[3/2]"
-                      label={block.imgLabel}
-                    />
+                    {block.img ? (
+                      "contain" in block && block.contain ? (
+                        <div className="w-3/5 mx-auto shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_0_24px_4px_rgba(201,169,97,0.10)]">
+                          <Image src={block.img} alt={block.imgLabel} width={1200} height={800} className="w-full h-auto object-contain" />
+                        </div>
+                      ) : (
+                        <div className="relative w-full aspect-[3/2] overflow-hidden shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_0_24px_4px_rgba(201,169,97,0.10)]">
+                          <Image src={block.img} alt={block.imgLabel} fill className="object-cover" />
+                        </div>
+                      )
+                    ) : (
+                      <ImagePlaceholder className="w-full aspect-[3/2]" label={block.imgLabel} />
+                    )}
                   </div>
 
                   <div
@@ -253,14 +270,23 @@ export default function LeProduit() {
       </section>
 
       {/* ─── IMAGE FINALE ─────────────────────────────────── */}
-      <section className="px-8 md:px-16 py-8 pb-24">
-        <ScrollReveal>
-          <ImagePlaceholder
-            className="w-full h-[60vh]"
-            label="Produit fini — vue d'ensemble"
-          />
-        </ScrollReveal>
-      </section>
+      {/* ↓ Remplace null par "/image/NLT_XXXX.jpg" pour afficher la photo */}
+      {(() => {
+        const src: string | null = "/image/NLT_5712.jpg";
+        return (
+          <section className="px-8 md:px-16 py-8 pb-24">
+            <ScrollReveal>
+              {src ? (
+                <div className="relative w-full max-w-3xl mx-auto shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_0_28px_6px_rgba(201,169,97,0.12)]">
+                  <Image src={src} alt="Produit fini — vue d'ensemble" width={1200} height={800} className="w-full h-auto object-contain" />
+                </div>
+              ) : (
+                <ImagePlaceholder className="w-full h-[60vh]" label="Produit fini — vue d'ensemble" />
+              )}
+            </ScrollReveal>
+          </section>
+        );
+      })()}
     </>
   );
 }
