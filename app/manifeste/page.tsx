@@ -39,24 +39,23 @@ export default function Manifeste() {
                 className="float-left text-[4.5rem] leading-[0.72] mr-3 mt-2 text-[#1A1A1A]"
                 style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
               >
-                L
+                O
               </span>
-              e réveil est un acte de violence. Depuis l'invention du réveil
-              mécanique au XIX{"ᵉ"} siècle, l'humanité a accepté l'idée
-              qu'un son strident soit la porte d'entrée vers chaque journée.
-              Nous refusons cette fatalité. Le corps mérite mieux qu'un
-              arrachement.
+              n a tous vécu ça. Le réveil sonne à 7h, vous devez vous lever,
+              mais votre partenaire, votre colocataire ou votre frère de chambre
+              peut dormir jusqu&rsquo;à 10h. En une seconde, tout le monde est réveillé.
+              Pour rien. C&rsquo;est le problème que l&rsquo;on a voulu résoudre.
             </p>
           </ScrollReveal>
 
           <ScrollReveal delay={0.08}>
             <p className="text-sm leading-[2.1] text-[#1A1A1A]/70 mb-10">
-              Le sommeil n'est pas une parenthèse. C'est le fondement sur
-              lequel repose toute action éveillée — la clarté d'esprit, la
-              résistance physique, la capacité à décider, à créer, à
-              prendre soin. Maltraiter le réveil, c'est maltraiter l'état
-              qui précède chaque journée. C'est conditionner le corps à
-              la peur avant même d'avoir ouvert les yeux.
+              Le manque de sommeil, c&rsquo;est concret. On est moins concentré en cours,
+              moins efficace, de mauvaise humeur. Et souvent, ce n&rsquo;est pas qu&rsquo;on
+              n&rsquo;a pas dormi assez longtemps — c&rsquo;est qu&rsquo;on a été réveillé brutalement,
+              au mauvais moment, par un son qui ne nous laisse pas le choix. Sans
+              parler des personnes malentendantes, pour qui un réveil sonore ne
+              sert tout simplement à rien.
             </p>
           </ScrollReveal>
 
@@ -85,20 +84,24 @@ export default function Manifeste() {
 
           <ScrollReveal delay={0.08}>
             <p className="text-sm leading-[2.1] text-[#1A1A1A]/70 mb-10 mt-4">
-              DreamPulse est né d'une conviction simple : la technologie
-              doit servir le corps, non le brutaliser. Un oreiller qui
-              vibre doucement n'est pas un gadget. C'est une décision
-              philosophique — celle de respecter les rythmes biologiques
-              plutôt que de les contraindre.
+              DreamPulse, c&rsquo;est un oreiller qui vibre pour vous réveiller. Pas de son,
+              pas de lumière, juste une vibration douce que vous seul ressentez.
+              L&rsquo;idée est simple : un aimant fixé à une membrane en carton, une bobine
+              alimentée par un circuit électrique, et le tout fait vibrer l&rsquo;oreiller
+              à une fréquence que vous contrôlez. La vibration commence doucement
+              autour de 5 Hz et monte progressivement jusqu&rsquo;à 15 Hz pour vous
+              réveiller en douceur, sans agresser personne d&rsquo;autre autour de vous.
             </p>
           </ScrollReveal>
 
           <ScrollReveal delay={0.06}>
             <p className="text-sm leading-[2.1] text-[#1A1A1A]/70 mb-10">
-              Nous avons choisi la vibration parce qu'elle parle au corps
-              sans passer par la conscience. Elle traverse le tissu, la
-              mousse, le drap — et parvient au système nerveux comme un
-              murmure. Pas une injonction. Une invitation.
+              Ce qu&rsquo;on aime dans la vibration, c&rsquo;est qu&rsquo;elle est discrète et personnelle.
+              Elle ne traverse pas les murs, elle ne réveille pas votre colocataire,
+              et elle s&rsquo;adapte à votre corps plutôt que de vous imposer un réveil
+              brutal. C&rsquo;est aussi une solution vraiment utile pour les personnes
+              sourdes ou malentendantes, qui n&rsquo;ont souvent pas d&rsquo;alternative pratique
+              au réveil sonore traditionnel.
             </p>
           </ScrollReveal>
 
@@ -109,8 +112,8 @@ export default function Manifeste() {
                 className="text-[clamp(1.4rem,2.8vw,2.2rem)] leading-[1.3] tracking-tight text-[#1A1A1A] italic"
                 style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
               >
-                &ldquo;Le luxe moderne n'est pas l'excès.<br />
-                C'est la qualité de chaque instant.&rdquo;
+                &ldquo;Le luxe moderne n&rsquo;est pas l&rsquo;excès.<br />
+                C&rsquo;est la qualité de chaque instant.&rdquo;
               </p>
               <div className="flex justify-center mt-6">
                 <div className="w-8 h-px bg-[#C9A961]" />
@@ -127,36 +130,35 @@ export default function Manifeste() {
 
           <ScrollReveal delay={0.08}>
             <p className="text-sm leading-[2.1] text-[#1A1A1A]/70 mb-10 mt-4">
-              Ce projet est académique. Ses ambitions sont modestes dans
-              leur portée, mais sincères dans leur intention. Quatre
-              étudiants ont voulu prouver que l'ingénierie peut être
-              attentive — qu'un objet technique peut être conçu avec
-              délicatesse, autant qu'avec rigueur.
+              Ce projet, c&rsquo;est avant tout un projet de bac 1 en ingénierie civile.
+              On n&rsquo;a pas la prétention d&rsquo;avoir inventé quelque chose de révolutionnaire.
+              Mais on a essayé de concevoir un objet qui répond à un vrai problème
+              du quotidien, en utilisant ce qu&rsquo;on a appris cette année — les circuits
+              électriques, les oscillateurs, les transistors, l&rsquo;interaction aimant-bobine.
+              Et on est plutôt fiers du résultat.
             </p>
           </ScrollReveal>
 
           <ScrollReveal delay={0.06}>
             <p className="text-sm leading-[2.1] text-[#1A1A1A]/70 mb-16">
-              Si DreamPulse vous convainc que votre réveil mérite
-              davantage de soin, alors notre travail aura atteint son
-              but. Non pas de vendre un produit, mais d'initier une
-              réflexion — sur le corps, sur le temps, sur la façon
-              dont nous traitons ce qui est précieux.
+              Si vous lisez ce manifeste et que vous vous reconnaissez dans le
+              problème — le réveil qui réveille tout le monde, les matins difficiles,
+              les nuits trop courtes — alors on a atteint notre objectif. On n&rsquo;essaie
+              pas de vendre un produit. On propose juste une idée simple : se
+              réveiller mieux, sans déranger les autres.
             </p>
           </ScrollReveal>
 
           {/* Photo 3 — NLT_5644 */}
           <ScrollReveal delay={0.06} className="my-10">
-            <div className="w-full max-w-xs mx-auto shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_0_24px_4px_rgba(201,169,97,0.10)]">
+            <div className="w-full max-w-xs mx-auto shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_0_28px_6px_rgba(201,169,97,0.12)]">
               <Image src="/image/NLT_5644.jpg" alt="DreamPulse — détail" width={800} height={600} className="w-full h-auto object-contain" />
             </div>
           </ScrollReveal>
 
           <ScrollReveal delay={0.05}>
             <div className="flex justify-center pt-4 pb-16">
-              <p
-                className="text-[10px] tracking-[0.25em] text-[#C9A961] uppercase"
-              >
+              <p className="text-[10px] tracking-[0.25em] text-[#C9A961] uppercase">
                 — Le Groupe 53, 2025–2026
               </p>
             </div>

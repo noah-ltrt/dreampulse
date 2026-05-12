@@ -44,12 +44,12 @@ const timeline = [
   {
     date: "Mars. 2026",
     title: "Première tentative de prototype",
-    text: "Test simple de circuit et mesure de donées de vibration sur un moteur à vibration, pour comprendre les paramètres clés.",
+    text: "Test simple de circuit et mesure de données en laboratoire sur l'interaction aimant bobine, pour comprendre les paramètres clés.",
   },
   {
     date: "Avril 2026",
     title: "Test V1",
-    text: "Ajustement du circuit,demandes de conseils aux tuteurs.Circuit fonctionel mais pas d'oreiller pour le tester.",
+    text: "Ajustement du circuit,demandes de conseils aux tuteurs.Circuit fonctionnel mais pas d'oreiller pour le tester.",
   },
   {
     date: "Mai 2026",
