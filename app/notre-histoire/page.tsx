@@ -138,7 +138,7 @@ export default function NotreHistoire() {
       {/* ─── PHOTO DE GROUPE ──────────────────────────────── */}
       {/* ↓ Remplace null par "/image/TON_FICHIER.jpg" pour afficher la vraie photo */}
       {(() => {
-        const src: "/image/NLT_5732.jpg" | null = "/image/NLT_5702.jpg";
+        const src: string | null = "/image/NLT_5702.jpg";
         return (
           <section className="px-8 md:px-16 py-12 border-t border-[#1A1A1A]/[0.07]">
             <ScrollReveal>
