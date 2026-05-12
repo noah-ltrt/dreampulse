@@ -32,29 +32,29 @@ const teamMembers = [
 
 const timeline = [
   {
-    date: "Sept. 2025",
+    date: "Février 2026",
     title: "Naissance du projet",
     text: "Le cours de projet démarre. L'équipe identifie la problématique du réveil brutal comme terrain d'exploration ingénieure.",
   },
   {
-    date: "Oct. 2025",
-    title: "Recherche & Définition",
-    text: "Études de l'existant, interviews d'utilisateurs, choix technologique du réveil par vibration. Premiers schémas.",
+    date: "Mars 2026",
+    title: "Apprentissage et recherche",
+    text: "Apprentissage de circuits électroniqueset conception de premiers schémas.",
   },
   {
-    date: "Nov. 2025",
-    title: "Premier prototype",
-    text: "Assemblage du prototype V1 : circuit nu, moteur vibrant, code de base. Premiers tests de réveil en laboratoire.",
+    date: "Mars. 2026",
+    title: "Première tentative de prototype",
+    text: "Test simple de circuit et mesure de donées de vibration sur un moteur à vibration, pour comprendre les paramètres clés.",
   },
   {
-    date: "Déc. 2025",
-    title: "Itérations V2 & V3",
-    text: "Ajustement de la courbe de progression, intégration dans l'oreiller, tests de confort sur dormeurs volontaires.",
+    date: "Avril 2026",
+    title: "Test V1",
+    text: "Ajustement du circuit,demandes de conseils aux tuteurs.Circuit fonctionel mais pas d'oreiller pour le tester.",
   },
   {
-    date: "Janv. 2026",
+    date: "Mai 2026",
     title: "Version finale",
-    text: "Prototype finalisé, housse cousue, documentation technique complète et présentation du site vitrine.",
+    text: "Incrustation dans la housse d'oreiller, tests de confort et de fiabilité, mesures finales pour le rapportdu projet.",
   },
 ];
 
@@ -80,7 +80,7 @@ export default function NotreHistoire() {
             </h1>
             <p className="text-[15px] leading-[1.8] text-[#1A1A1A]/50">
               La genèse d'un projet académique, entre contraintes d'ingénierie
-              et désir de concevoir quelque chose d'utile.
+              et désir de concevoir quelque chose de vraiment d'utile.
             </p>
           </motion.div>
         </div>
