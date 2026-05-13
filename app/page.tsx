@@ -190,7 +190,7 @@ export default function Home() {
         Option C — Vimeo (remplace l'ID) :
           <VideoSection vimeoId="XXXXXXXX" caption="DreamPulse — Prototype 2026" />
       */}
-      <VideoSection caption="DreamPulse — Prototype 2026" />
+      <VideoSection localSrc="/videos/dreampulse.mov" caption="DreamPulse — Prototype 2026" />
 
       {/* ─── TEASER PAGES ─────────────────────────────────── */}
       <section className="px-8 md:px-16 py-32">
